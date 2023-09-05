@@ -1,11 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
+import AddUser from './components/AddUser/AddUser';
+import UserList from './components/UserList/UserList';
+import Error from './components/Error/Error';
 
 
 function App() {
-  return (
-    <div>
+  const [userList,setUserList]= useState([]);
+  const [flag, setFlag]=useState(false);
 
-    </div>
+
+  return (<>
+    <AddUser setUserList={setUserList} setFlag={setFlag}/>
+    <UserList list={userList}/>
+    {flag && <Error setFlag={setFlag}/>}
+       </>
   );
 }
 
