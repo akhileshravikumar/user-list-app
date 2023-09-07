@@ -11,7 +11,7 @@ function App() {
 
   return (<>
     <AddUser setUserList={setUserList} setFlag={setFlag}/>
-    <UserList list={userList}/>
+    {userList.length>0 && <UserList list={userList}/>}
     {flag && <Error setFlag={setFlag}/>}
        </>
   );
