@@ -4,7 +4,9 @@ import './UserList.css';
 const UserList = (props)=>{
     return(
     <div className="users">
-        <ul>
+        
+        <ul id="user-list">
+        <label htmlFor="user-list">Users</label>
             {props.list.map((item)=>{
                 return (<li key={Math.random()}>{item.name}: {item.age} years old</li>);
             })}
